@@ -1,0 +1,184 @@
+.notifications
+	display: flex
+	align-items: center
+	justify-content: center
+	position: relative
+	z-index: 21
+	&.visible
+		.notifications
+			&-button
+				&:before
+					opacity: 1
+				.notifications
+					&-button
+						&__icon
+							path
+								fill: #fff
+			&-dropdown
+				opacity: 1
+				visibility: visible
+	&-button
+		@include button
+		width: 38px
+		height: 38px
+		border-radius: 100%
+		position: relative
+		overflow: hidden
+		&__icon
+			position: absolute
+			top: 5px
+			left: 1px
+			width: 24px
+			height: 24px
+			z-index: 2
+			path
+				transition: fill .3s
+		&__count
+			position: absolute
+			display: flex
+			align-items: center
+			justify-content: center
+			bottom: 5px
+			right: 5px
+			width: 17px
+			height: 17px
+			border-radius: 100%
+			background-color: var(--blue)
+			z-index: 2
+			font-weight: 800
+			font-size: 11px
+			color: #fff
+		&:active
+			.notifications
+				&-button
+					&__icon
+						path
+							fill: #fff
+	&-dropdown
+		position: absolute
+		top: 100%
+		margin-top: 10px
+		left: 0
+		padding: 30px
+		width: 350px
+		z-index: -1
+		overflow: hidden
+		opacity: 0
+		visibility: hidden
+		transition: opacity .3s, visibility .3s
+		backdrop-filter: blur(12px)
+		background: linear-gradient(135deg, rgba(#213045, .8) 0%, rgba(#101B2A, .8) 100%)
+	&-list
+		overflow: hidden
+		height: 100%
+		overflow-y: auto
+		-webkit-overflow-scrolling: touch
+		max-height: calc(70vh - 200px)
+	&-top
+		padding-right: 66px
+	&-title
+		font-weight: 500
+		font-size: 20px
+		margin: 0
+		color: #fff
+		font-family: var(--second-family)
+		letter-spacing: 0.1em
+		text-transform: uppercase
+	&-close
+		@include button
+		background-color: var(--accent-color)
+		width: 36px
+		height: 36px
+		border-radius: 100%
+		position: absolute
+		top: 26px
+		right: 20px
+	&-list
+		display: flex
+		flex-direction: column
+		margin-top: 30px
+	&-filter
+		margin-top: 30px
+		.btn
+			width: 100%
+	&-overlay
+		position: fixed
+		overflow: hidden
+		top: 0
+		left: 0
+		right: 0
+		height: 100dvh
+		z-index: 21
+		background-color: #000
+		opacity: 0
+		visibility: hidden
+		transition: opacity .3s, visibility .3s
+		&.visible
+			opacity: .5
+			visibility: visible
+
+.notification
+	color: #fff
+	padding-right: 10px
+	&.read
+		color: var(--text-color)
+		.notification
+			&-time
+				border-left: 1px solid var(--text-color)
+	& + .notification
+		margin-top: 30px
+	&-data,
+	&-time
+		font-weight: 400
+		font-size: 14px
+		white-space: nowrap
+	&-time
+		border-left: 1px solid #fff
+		padding-left: 5px
+		margin-left: 5px
+	&-text
+		font-weight: 400
+		font-size: 14px
+		margin-top: 10px
+		display: block
+		a
+			color: inherit
+			text-decoration: none
+			text-decoration-color: transparent
+			transition: text-decoration-color .3s
+			&:hover
+				text-decoration: underline
+				text-decoration-color: inherit
+		b, strong
+			font-weight: 700
+
+.is-user
+	.header-block
+		position: relative
+	.notifications
+		position: static
+		&-dropdown
+			left: auto
+			right: 0
+			margin-top: -30px
+
+@media only screen and (max-width : 1199px)
+
+	.notifications
+		margin-left: auto
+
+	.is-user
+		.notifications
+			&-dropdown
+				margin-top: -10px
+
+@media only screen and (max-width : 991px)
+
+	.notifications
+		position: static
+		margin-right: 0
+		&-dropdown
+			left: auto
+			right: 0
+			width: 280px
+			margin-top: -10px

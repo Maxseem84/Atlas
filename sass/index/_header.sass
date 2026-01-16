@@ -1,0 +1,303 @@
+.logo
+	display: inline-flex
+	align-items: center
+	justify-content: center
+
+.language
+	position: relative
+	padding: 10px 0
+	&__current
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		user-select: none
+		cursor: pointer
+		color: #fff
+	&__dropdown
+		position: absolute
+		z-index: 3
+		top: 100%
+		width: 90px
+		left: -20px
+		padding: 10px 20px
+		opacity: 0
+		transition: all .3s
+		pointer-events: none
+		background: var(--black)
+		border: 1px solid rgba(#5D6A88, .2)
+		transform: translateY(-10px)
+		border-radius: 8px
+		&.visible
+			pointer-events: auto
+			opacity: 1
+			transform: translateY(0)
+	&__item
+		padding: 10px 0
+		color: #fff
+		transition: color .3s
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		&:hover
+			color: var(--accent-color)
+	&__icon
+		width: 20px
+		height: 15px
+		flex-shrink: 0
+		margin-right: 5px
+	&__text
+		font-size: 15px
+		font-weight: 500
+
+.social
+	display: inline-flex
+	align-items: center
+	justify-content: flex-start
+	&__link
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-shrink: 0
+		width: 30px
+		height: 30px
+		border-radius: 4px
+		background-color: #131c24
+		transition: background-color .3s
+		img
+			width: 16px
+			height: 16px
+		& + .social__link
+			margin-left: 10px
+		&:hover
+			background-color: var(--accent-color)
+
+.header
+	z-index: 10
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	height: 100px
+	transition: height .3s, border-color .3s
+	box-shadow: none
+	border-bottom: 1px solid transparent
+	&-block
+		display: flex
+		align-items: center
+		justify-content: space-between
+		height: 100px
+		transition: height .3s
+	&.fixed
+		position: fixed
+		background-color: var(--black)
+		height: 80px
+		border-color: rgba(#5D6A88, .2)
+		.header
+			&-block
+				height: 80px
+	&__logo
+		display: flex
+		flex-shrink: 0
+		img
+			width: 147px
+	&__slogan
+		color: #fff
+		font-size: 15px
+		font-weight: 200
+		margin-left: 20px
+		padding-left: 20px
+		position: relative
+		padding-top: 5px
+		padding-bottom: 5px
+		letter-spacing: 0.1em
+		&:before
+			position: absolute
+			content: ''
+			display: block
+			width: 3px
+			top: 0
+			bottom: 0
+			left: 0
+			background-color: var(--accent-color)
+	&__menu
+		margin-left: auto
+		margin-right: auto
+	&__language
+		margin-right: 40px
+	&__social
+		margin-right: 40px
+	&__btn
+		flex-shrink: 0
+		font-size: 13px
+		padding: 14px 30px
+
+.menu
+	&__list
+		display: inline-flex
+		align-items: center
+		justify-content: flex-start
+	&__item
+		& + .menu__item
+			margin-left: 40px
+		&.current_page_item
+			.menu
+				&__link
+					border-color: #fff
+	&__link
+		color: #fff
+		font-weight: 500
+		font-size: 15px
+		text-decoration: none
+		border-bottom: 1px solid transparent
+		transition: border-color .3s
+		white-space: nowrap
+		padding: 4px 0
+		padding-right: 19px
+		background-image: url('./images/arrow.svg')
+		background-repeat: no-repeat
+		background-position: center right
+		background-size: 14px
+		&:before
+			position: absolute
+		&:hover
+			border-color: #fff
+
+.hamburger
+	display: none
+	align-items: center
+	justify-content: center
+	cursor: pointer
+	padding: 0
+	height: 32px
+	background-color: transparent
+	z-index: 12
+	.hamburger-box
+		width: 32px
+		height: 24px
+	.hamburger-inner,
+	.hamburger-inner::after,
+	.hamburger-inner::before
+		background-color: #fff
+		height: 3px
+		width: 32px
+		border-radius: 0
+	&:hover
+		opacity: 1
+	.hamburger-inner::before
+		top: 10px
+
+@media only screen and (max-width : 1299px)
+
+	.header
+		&__slogan
+			letter-spacing: normal
+		&__language
+			margin-right: 30px
+		&__social
+			margin-right: 30px
+		&__menu
+			.menu
+				&__item
+					& + .menu__item
+						margin-left: 30px
+
+@media only screen and (max-width : 1199px)
+
+	.header
+		height: 80px
+		&-block
+			height: 80px
+		&__logo
+			position: relative
+			z-index: 13
+		&__slogan
+			margin-right: auto
+		&.opened
+			.header
+				&__menu
+					opacity: 1
+					visibility: visible
+					transition: opacity .3s, visibility .3s
+					.menu
+						&__list
+							transform: translateY(0px)
+		&__hamburger
+			display: inline-flex
+			margin-left: 30px
+		&__menu
+			margin: 0
+			display: flex
+			flex-direction: column
+			justify-content: center
+			text-align: center
+			position: fixed
+			overflow: hidden
+			top: 0
+			right: 0
+			left: 0
+			height: 100dvh
+			overflow-y: auto
+			-webkit-overflow-scrolling: touch
+			z-index: 12
+			background-color: var(--black)
+			opacity: 0
+			visibility: hidden
+			padding: 100px 0
+			.menu
+				&__list
+					flex-direction: column
+					transform: translateY(100px)
+					transition: transform .5s
+				&__item
+					margin-right: 0
+					width: 100%
+					& + .menu__item
+						margin-top: 40px
+						margin-left: 0
+
+	.menu
+		&__hamburger
+			position: absolute
+			top: 30px
+			right: 0
+			opacity: 0
+			visibility: hidden
+			z-index: 13
+			&.is-visible
+				opacity: 1
+				visibility: visible
+			.hamburger-inner,
+			.hamburger-inner::after,
+			.hamburger-inner::before
+				background-color: #fff
+
+@media only screen and (max-width : 991px)
+
+	.header
+		&__logo
+			margin-right: auto
+		&__slogan
+			display: none
+
+@media only screen and (max-width : 767px)
+
+	.header
+		&__btn
+			display: none
+		&__social
+			margin-right: 0
+
+@media only screen and (max-width : 575px)
+
+	.header
+		&__hamburger
+			margin-left: 20px
+		&__social
+			margin-left: 20px
+		&__language
+			margin-left: 30px
+			margin-right: 0
+		&__logo
+			flex-shrink: 1
+			max-width: 120px
+			width: auto

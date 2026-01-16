@@ -1,0 +1,46 @@
+.markets
+	font-family: var(--second-family)
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	font-weight: 500
+	font-size: 15px
+	color: #fff
+	&__title
+		margin-right: 30px
+	&__token
+		display: inline-flex
+		align-items: center
+		justify-content: flex-start
+		& + .markets__token
+			margin-left: 30px
+	&__prefix-value
+		color: #5A5A5A
+		strong
+			font-weight: 500
+			color: #fff
+			margin-right: 5px
+	&__token-value
+		margin-left: 5px
+		color: var(--accent-color)
+
+.footer
+	padding: 20px 0
+	&__inner
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__menu
+		font-family: var(--second-family)
+
+@media only screen and (max-width : 991px)
+
+	.footer
+		&__markets
+			display: none
+		&__menu
+			margin-left: 0
+			width: 100%
+			.menu__list
+				display: flex
+				justify-content: center

@@ -1,0 +1,292 @@
+.is-user
+	.footer
+		display: none
+	.container
+		max-width: 1500px
+
+.user
+	margin-top: 20px
+	color: #fff
+	&-bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-position: top center
+		background-size: cover
+		background-repeat: no-repeat
+		z-index: -1
+	&-block
+		display: flex
+		height: calc(100vh - 170px)
+	&-aside
+		width: 250px
+		flex-shrink: 0
+		margin-right: 30px
+		position: relative
+		border-radius: 8px
+		padding: 30px 5px
+		height: 100%
+		backdrop-filter: blur(12px)
+		background: linear-gradient(135deg, rgba(#213045, .8) 0%, rgba(#101B2A, .8) 100%)
+		&__inner
+			position: relative
+			padding: 0 25px
+			z-index: 2
+			display: flex
+			flex-direction: column
+			overflow: hidden
+			height: 100%
+			overflow-y: auto
+			-webkit-overflow-scrolling: touch
+	&-name
+		display: flex
+		align-items: center
+	&-greeting
+		font-weight: 500
+		font-size: 15px
+		color: var(--user-text-color)
+	&-avatar
+		width: 40px
+		height: 40px
+		flex-shrink: 0
+		margin-right: 10px
+		border-radius: 50%
+		overflow: hidden
+		background-color: rgba(#586F8E, .5)
+		position: relative
+		background-image: url('./images/user-icon.svg')
+		background-repeat: no-repeat
+		background-size: auto
+		background-position: center
+		img
+			@include cover
+	&-nav
+		margin-top: 80px
+		display: flex
+		flex-direction: column
+		&__link
+			display: inline-flex
+			align-items: center
+			justify-content: flex-start
+			font-weight: 500
+			font-size: 15px
+			transition: color .3s
+			&:hover,
+			&.active
+				color: var(--accent-color)
+				svg
+					path
+						fill: var(--accent-color)
+			& + .user-nav__link
+				margin-top: 30px
+			svg
+				width: 24px
+				height: 24px
+				margin-right: 9px
+				flex-shrink: 0
+				path
+					transition: fill .3s
+	&-logout
+		display: inline-flex
+		align-items: center
+		justify-content: flex-start
+		font-weight: 500
+		font-size: 15px
+		transition: color .3s
+		margin: 80px 0
+		&:hover
+			color: var(--accent-color)
+			svg
+				path
+					fill: var(--accent-color)
+		svg
+			width: 24px
+			height: 24px
+			margin-right: 9px
+			flex-shrink: 0
+			path
+				transition: fill .3s
+	&-copy
+		color: var(--user-text-color)
+		font-size: 12px
+		margin-top: auto
+		line-height: 1.5
+	&-content
+		width: 100%
+		overflow: hidden
+		height: calc(100vh - 130px)
+		overflow-y: auto
+		-webkit-overflow-scrolling: touch
+		padding-bottom: 40px
+		&__title
+			margin: 0
+			font-weight: 500
+			font-size: 24px
+			font-family: var(--second-family)
+			letter-spacing: 0.1em
+			text-transform: uppercase
+			margin-bottom: 10px
+	&-grid
+		width: calc(100% + 10px)
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -5px
+		justify-content: space-between
+		&__column
+			width: 50%
+			&--w70
+				width: 66.5%
+			&--w30
+				width: 33.5%
+			.user-grid__item
+				width: calc(100% - 10px)
+		&__title
+			margin: 0
+			font-size: 18px
+			font-weight: 500
+			font-family: var(--second-family)
+			letter-spacing: 0.1em
+			text-transform: uppercase
+		&__item
+			width: 100%
+			margin: 10px 5px 0
+			border-radius: 8px
+			padding: 30px
+			backdrop-filter: blur(12px)
+			background: linear-gradient(135deg, rgba(#213045, .8) 0%, rgba(#101B2A, .8) 100%)
+			&--w70
+				width: calc(66.5% - 10px)
+			&--w30
+				width: calc(33.5% - 10px)
+			&-inner
+				position: relative
+				z-index: 2
+				height: 100%
+			&--w50
+				width: calc(50% - 10px)
+			&-top
+				display: flex
+				align-items: center
+				margin-bottom: 20px
+				.btn
+					margin-left: 20px
+
+@media only screen and (max-width : 1599px)
+
+	.user
+		&-block
+			height: calc(100vh - 150px)
+		&-content
+			height: calc(100vh - 110px)
+		&-nav
+			margin-top: 40px
+		&-logout
+			margin: 30px 0 50px
+		&-grid
+			&__item
+				&--w70
+					width: calc(60% - 10px)
+				&--w30
+					width: calc(40% - 10px)
+			&__column
+				width: 50%
+				&--w70
+					width: 60%
+				&--w30
+					width: 40%
+				.user-grid__item
+					width: calc(100% - 10px)
+
+@media only screen and (max-width : 1199px)
+
+	.user
+		&-block
+			height: calc(100vh - 130px)
+		&-content
+			height: calc(100vh - 90px)
+		&-grid
+			&__item
+				&--w70
+					width: calc(100% + 10px)
+				&--w30
+					width: calc(100% + 10px)
+			&__column
+				&--w70
+					width: calc(100% + 10px)
+				&--w30
+					width: calc(100% + 10px)
+
+@media only screen and (max-width : 991px)
+
+	.is-user
+		.header
+			&__menu
+				display: none
+			&__hamburger
+				display: none
+		.user
+			&__hamburger
+				display: inline-flex
+				margin-left: 30px
+		.footer
+			display: block
+
+	.user
+		&-overlay
+			position: fixed
+			overflow: hidden
+			top: 0
+			left: 0
+			right: 0
+			height: 100dvh
+			z-index: 9
+			background-color: #000
+			opacity: 0
+			visibility: hidden
+			&.opened
+				opacity: .5
+				visibility: visible
+				transition: opacity .3s, visibility .3s
+		&-aside
+			position: fixed
+			overflow: hidden
+			top: 0
+			left: -101%
+			width: 250px
+			height: 100dvh
+			z-index: 12
+			border-radius: 0
+			transition: left .5s
+			margin-right: 0
+			&:before
+				border-radius: 0
+			&.opened
+				left: 0
+		&-nav
+			margin-top: 60px
+		&-logout
+			margin: 60px 0
+		&-block
+			height: auto
+		&-content
+			height: auto
+
+@media only screen and (max-width : 767px)
+
+	.user
+		&-grid
+			&__item
+				&--w50
+					width: calc(100% - 10px)
+
+@media only screen and (max-width : 575px)
+
+	.user-grid
+		&__title
+			font-size: 16px
+		&__item
+			padding: 30px 20px
+			&-top
+				justify-content: space-between

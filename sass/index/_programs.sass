@@ -1,0 +1,101 @@
+.programs
+	display: flex
+	justify-content: space-between
+	width: 100%
+
+	gap: 20px
+	&-block
+		position: relative
+	&-info
+		max-width: 470px
+		position: absolute
+		left: 0
+		top: 0
+
+.program
+	display: flex
+	flex-direction: column
+	text-align: center
+	align-items: center
+	justify-content: flex-end
+	font-family: var(--second-family)
+	width: 203px
+	&:nth-child(1)
+		margin-bottom: 60px
+	&-level
+		border-radius: 4px
+		color: #fff
+		font-weight: 500
+		font-size: 16px
+		padding: 5px 15px
+		width: 62px
+		height: 32px
+		display: flex
+		align-items: center
+		justify-content: center
+		background: var(--blue-gradient)
+	&-percent
+		font-size: 48px
+		color: #fff
+		margin-top: 5px
+	&-title
+		font-weight: 500
+		font-size: 16px
+		margin-top: 5px
+	&-column
+		display: flex
+		margin-top: 15px
+		width: 105px
+		height: auto
+	&-value
+		margin-top: 20px
+		font-size: 32px
+		color: #fff
+		white-space: nowrap
+
+@media only screen and (max-width : 1599px)
+
+	.program
+		width: auto
+
+@media only screen and (max-width : 1199px)
+
+	.programs
+		&-block
+			padding-top: 50px
+
+	.program
+		&-level
+			font-size: 14px
+		&-percent
+			font-size: 42px
+		&-title
+			font-size: 14px
+		&-column
+			width: 85px
+		&-value
+			font-size: 28px
+
+@media only screen and (max-width : 991px)
+
+	.programs
+		&-block
+			padding-top: 0px
+			flex-direction: column
+			align-items: center
+		&-info
+			position: relative
+			top: auto
+			left: auto
+			max-width: 100%
+			text-align: center
+
+@media only screen and (max-width : 767px)
+
+	.programs
+		flex-wrap: wrap
+		gap: 0
+
+	.program
+		width: 30%
+		margin-top: 50px

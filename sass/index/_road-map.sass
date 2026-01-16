@@ -1,0 +1,245 @@
+.road-map
+	margin-top: 200px
+	position: relative
+	&-block
+		padding: 130px 0px
+		display: flex
+		flex-direction: column
+		align-items: center
+		text-align: center
+		border-radius: 8px
+		overflow: hidden
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: top center
+	&-way
+		display: flex
+		width: 100%
+	&-items
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		text-align: left
+	&-item
+		display: flex
+		flex-direction: column
+		position: absolute
+		bottom: 100%
+		z-index: 2
+		margin-left: -18px
+		margin-bottom: -10px
+		&:has(.road-map-item__column--dashed)
+			.road-map-item
+				&__title,
+				&__text
+					opacity: .5
+		&:nth-child(1)
+			left: 6.5%
+		&:nth-child(2)
+			left: 40.5%
+		&:nth-child(3)
+			left: 70.8%
+		&:nth-child(4)
+			left: 70.8%
+			bottom: 66%
+		&:nth-child(5)
+			left: 40.5%
+			bottom: 66%
+		&:nth-child(6)
+			left: 6.5%
+			bottom: 66%
+		&:nth-child(7)
+			left: 6.5%
+			bottom: 34%
+		&:nth-child(8)
+			left: 40.5%
+			bottom: 34%
+		&:nth-child(9)
+			left: 70.8%
+			bottom: 34%
+		&:nth-child(10)
+			left: 70.8%
+			bottom: .5%
+		&:nth-child(11)
+			left: 40.5%
+			bottom: .5%
+		&:nth-child(12)
+			left: 6.5%
+			bottom: .5%
+		&__title
+			font-size: .87vw
+			font-weight: 700
+			color: #fff
+		&__text
+			font-weight: 500
+			font-size: .72vw
+			line-height: 150%
+			color: #C4CCD5
+			margin-top: .8vw
+			margin-bottom: 1vw
+		&__column
+			width: 36px
+			height: 42px
+			flex-shrink: 0
+			background-image: url('/images/light-column.png')
+			background-repeat: no-repeat
+			background-size: contain
+			background-position: center
+			margin-top: auto
+			&--dashed
+				background-image: url('/images/dark-column.png')
+
+@media only screen and (min-width : 2000px)
+
+	.road-map
+		&-item
+			&__title
+				font-size: 16px
+			&__text
+				font-size: 13px
+				margin-top: 15px
+
+@media only screen and (max-width : 1199px)
+
+	.road-map
+		margin-top: 150px
+		&-block
+			padding: 100px 0px
+		&-item
+			&__title
+				font-size: 1vw
+			&__text
+				font-size: .8vw
+
+// @media only screen and (max-width : 991px)
+
+// 	.road-map
+// 		margin-top: 50px
+// 		&-section
+// 			.container
+// 				padding: 0
+// 		&-block
+// 			background-image: none!important
+// 			padding: 0
+// 		&-items
+// 			position: relative
+// 			left: auto
+// 			top: auto
+// 			bottom: auto
+// 			right: auto
+// 		&-way
+// 			display: none
+// 		&-item
+// 			padding: 40px
+// 			text-align: center
+// 			align-items: center
+// 			position: relative
+// 			left: auto!important
+// 			bottom: auto!important
+// 			margin: 0
+// 			border-radius: 4px
+// 			backdrop-filter: blur(5px)
+// 			overflow: hidden
+// 			position: relative
+// 			background-image: linear-gradient(135deg, rgba(#455976, .5) 0%, rgba(#1F2833, .5) 100%)!important
+// 			&:before
+// 				position: absolute
+// 				content: ''
+// 				border-radius: inherit
+// 				inset: 0
+// 				padding: 1px
+// 				background: linear-gradient(90deg, rgba(#5D6A88, .8) 0%, rgba(#5D6A88, .16) 100%)
+// 				-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+// 				-webkit-mask-composite: xor
+// 				mask-composite: exclude
+// 				pointer-events: none
+// 			&:last-child
+// 				.road-map-item
+// 					&__column
+// 						&:before,
+// 						&:after
+// 							display: none
+// 			& + .road-map-item
+// 				margin-top: 10px
+// 			&__title
+// 				font-size: 16px
+// 			&__text
+// 				font-size: 13px
+// 				margin-top: 15px
+// 			&__column
+// 				order: -1
+// 				margin: 0
+// 				margin-bottom: 20px
+
+// @media only screen and (max-width : 575px)
+
+// 	.road-map
+// 		margin-top: 40px
+// 		&-item
+// 			padding: 30px
+// 			&__text,
+// 			&__title
+// 				br
+// 					display: none
+
+@media only screen and (max-width : 991px)
+
+	.road-map
+		margin-top: 50px
+		&-items
+			position: relative
+			left: auto
+			top: auto
+			bottom: auto
+			right: auto
+			display: flex
+			flex-direction: column
+			margin-left: auto
+			margin-right: auto
+			max-width: 400px
+		&-way
+			display: none
+		&-item
+			text-align: left
+			align-items: flex-start
+			position: relative
+			left: auto!important
+			bottom: auto!important
+			margin: 0
+			padding-left: 70px
+			&:before
+				position: absolute
+				content: ''
+				left: 17px
+				top: 5px
+				bottom: -90px
+				width: 2px
+				border-left: 2px solid #CBB586
+			&:has(.road-map-item__column--dashed)
+				&:before
+					border-left: 2px dashed #90A0BD
+			&:last-child
+				&:before
+					display: none
+			& + .road-map-item
+				margin-top: 50px
+			&__title
+				font-size: 16px
+			&__text
+				font-size: 13px
+				margin-top: 15px
+				br
+					display: none
+			&__column
+				position: absolute
+				left: 0
+				top: 0
+				margin: 0
+
+@media only screen and (max-width : 575px)
+
+	.road-map
+		&-block
+			padding: 70px 0

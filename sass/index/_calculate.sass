@@ -1,0 +1,308 @@
+.calculate
+	display: flex
+	justify-content: space-between
+	&-info
+		margin-right: 140px
+	&-deposit
+		width: 66%
+		flex-shrink: 0
+		background: linear-gradient(135deg, rgba(#455976, .5) 0%, rgba(#33445B, .5) 100%)
+		backdrop-filter: blur(22px)
+		overflow: hidden
+		.open-deposit-form
+			padding: 0
+			margin: 0
+		&-block
+			display: flex
+			flex-direction: column
+			justify-content: space-between
+		&-body
+			display: flex
+			justify-content: space-between
+			padding: 60px
+	&-fields
+		width: 100%
+		overflow: hidden
+		display: flex
+		flex-direction: column
+		.open-deposit-staking
+			width: 100%
+			margin-bottom: 26px
+		.form-group
+			margin-bottom: 26px
+		.form-label
+			color: #738293
+			font-size: 14px
+		input[type=number]
+			height: 50px
+			border-color: #394960
+	&-total
+		margin-top: auto
+		padding-top: 26px
+		border-top: 1px solid #3A4A62
+		&__title
+			font-weight: 400
+			font-size: 14px
+			font-family: var(--third-family)
+			color: #738293
+			margin-bottom: 5px
+		.form__send
+			margin: 0
+			padding: 0
+			&-text
+				margin-top: 0
+				font-weight: 400
+				font-size: 14px
+				font-family: var(--third-family)
+				color: #738293
+			&-amount
+				&-value
+					font-weight: 500
+					font-size: 40px
+					font-family: var(--third-family)
+					overflow-wrap: break-word
+					word-break: break-word
+				&-currency
+					color: #738293
+					font-family: var(--third-family)
+					font-weight: 500
+					font-size: 14px
+
+.form__send
+	&-daily
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+		margin-bottom: 26px
+		&-amount
+			white-space: nowrap
+			&-value
+				font-weight: 500
+				font-size: 40px
+				color: var(--accent-color)
+				font-family: var(--third-family)
+				overflow-wrap: break-word
+				word-break: break-word
+			&-currency
+				color: #738293
+				font-weight: 500
+				font-size: 14px
+				font-family: var(--third-family)
+		&-percent
+			white-space: nowrap
+			font-family: var(--third-family)
+			font-weight: 500
+			font-size: 14px
+			color: #738293
+			&-value
+				font-weight: 700
+				font-size: 24px
+				color: #e2d6ba
+				margin-right: 3px
+
+.currency-radio
+	&-wrapper
+		width: 100%
+		opacity: 0
+		background-color: rgba(#586F8E, .5)
+		padding: 4px
+		&.swiper-initialized
+			opacity: 1
+	&__label
+		width: 88px!important
+		height: 88px!important
+		flex-shrink: 0
+		border-radius: 4px
+		overflow: hidden
+		padding: 20px
+		cursor: pointer
+		position: relative
+		input[type="radio"]
+			position: absolute
+			opacity: 0
+			visibility: hidden
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			&:checked
+				& + .currency-radio__icon
+					background-color: #232E3F
+					img
+						opacity: 1
+	&__icon
+		pointer-events: none
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: flex
+		align-items: center
+		justify-content: center
+		transition: background-color .3s
+		user-select: none
+		opacity: 0.8
+		img
+			width: 48px
+			height: 48px
+
+.currency-term
+	width: 34%
+	flex-shrink: 0
+	margin-right: 45px
+	display: flex
+	flex-direction: column
+	border-radius: 4px
+	padding: 2px
+	background: #222d3d
+	&__label
+		line-height: 1
+		width: 100%
+		min-height: 33.33%
+		display: flex
+		justify-content: center
+		align-items: center
+		padding: 20px
+		transition: all 0.3s ease
+		cursor: pointer
+		position: relative
+		font-weight: 600
+		font-size: 40px
+		text-align: center
+		color: #fff
+		font-family: var(--third-family)
+		small
+			font-weight: 500
+			font-size: 16px
+			display: block
+		input[type="radio"]
+			position: absolute
+			opacity: 0
+			visibility: hidden
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			&:checked
+				& + .currency-term__text
+					background: rgba(88, 111, 142, 0.5)
+	&__text
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		pointer-events: none
+		transition: background-color .3s
+		border-radius: 4px
+
+@media only screen and (max-width : 1299px)
+
+	.calculate
+		&-info
+			margin-right: 70px
+		&-deposit
+			&-body
+				padding: 50px
+
+	.currency-term
+		width: 200px
+
+@media only screen and (max-width : 1199px)
+
+	.currency-term
+		width: 150px
+
+	.calculate
+		&-total
+			.form__send
+				&-amount-value
+					font-size: 36px
+
+	.form__send
+		&-daily
+			&-amount-value
+				font-size: 36px
+			&-percent
+				&-value
+					font-size: 20px
+
+@media only screen and (max-width : 991px)
+
+	.calculate
+		flex-direction: column
+		&-info
+			width: 100%
+			text-align: center
+		&-fields
+			width: 100%
+		&-deposit
+			margin-top: 50px
+			width: 100%
+
+	.currency-term
+		width: 200px
+
+@media only screen and (max-width : 767px)
+
+	.calculate
+		&-deposit
+			&-body
+				padding: 40px
+			.open-deposit-staking input + span
+				white-space: normal
+
+	.currency-term
+		width: 100px
+		margin-right: 30px
+		&__label
+			font-size: 32px
+			min-height: auto
+			height: 33.33%
+			small
+				font-size: 12px
+				margin-top: 5px
+
+@media only screen and (max-width : 575px)
+
+	.calculate
+		margin-top: 40px
+		&-deposit
+			&-body
+				padding: 20px
+		&-total
+			.form__send
+				&-amount-value
+					font-size: 24px
+
+	.currency-term
+		width: 80px
+		margin-right: 20px
+
+	.currency-radio
+		&-wrapper
+			top: 20px
+		&__label
+			width: 60px!important
+			height: 60px!important
+		&__icon
+			img
+				width: 32px
+				height: 32px
+
+	.form__send
+		font-size: 30px
+		&-daily
+			flex-direction: column
+			align-items: flex-start
+			&-amount-value
+				font-size: 24px
+			&-percent
+				margin-top: 5px
+				&-value
+					font-size: 16px

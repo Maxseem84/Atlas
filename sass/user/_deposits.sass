@@ -1,0 +1,172 @@
+.deposits
+	width: 100%
+	display: flex
+	flex-direction: column
+	margin-top: 20px
+	&__no-entries
+		font-size: 13px
+	table
+		width: 100%
+		border-spacing: 0 10px
+		margin-top: -10px
+		margin-bottom: -10px
+
+.closed-deposits
+	.deposits
+		margin-top: 0
+
+.deposit
+	padding: 20px 0
+	padding-left: 30px
+	background-color: rgba(#586F8E, .5)
+	&:nth-child(1)
+		border-radius: 8px 0 0 8px
+	&:last-child
+		padding-right: 30px
+		border-radius: 0 8px 8px 0
+	&__currency
+		display: inline-flex
+		flex-direction: column
+		align-items: flex-start
+		img
+			width: 24px
+			height: 24px
+			margin-bottom: 10px
+		span
+			font-size: 14px
+			font-weight: 600
+			text-transform: uppercase
+	&__amount
+		font-weight: 500
+		font-size: 24px
+		white-space: nowrap
+		font-family: var(--second-family)
+	&__rate
+		font-size: 12px
+		margin-top: 10px
+		display: block
+	&__income
+		color: var(--accent-color)
+		font-size: 12px
+	&__term
+		margin-top: 10px
+		font-size: 12px
+		display: block
+	&__staking
+		font-weight: 700
+		font-size: 14px
+	&__id
+		font-size: 14px
+		white-space: nowrap
+		text-align: right
+
+.open-deposit-staking
+	display: inline-flex
+	justify-content: start
+	border-radius: 4px
+	min-height: 50px
+	box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.15)
+	background: #222d3d
+	margin-bottom: 30px
+	position: relative
+	&__radio
+		width: 50%
+		flex-shrink: 0
+		position: relative
+		color: #fff
+	&__slider
+		position: absolute
+		top: 1px
+		left: 1px
+		bottom: 1px
+		width: calc(50% - 1px)
+		border-radius: 4px
+		background: var(--blue-gradient)
+		box-shadow: 0 4px 6px 0 rgba(6, 110, 255, 0.3)
+		transition: left .5s
+		&.active
+			left: 50%
+	input
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		position: absolute
+		opacity: 0
+		cursor: pointer
+		z-index: 2
+		& + span
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			width: 100%
+			height: 100%
+			text-align: center
+			font-size: 15px
+			font-weight: 500
+			padding: 0 30px
+			white-space: nowrap
+			position: relative
+
+@media only screen and (max-width : 767px)
+
+	.deposit
+		padding-left: 20px
+		&:last-child
+			padding-right: 20px
+
+@media only screen and (max-width : 575px)
+
+	.deposits
+		table
+			border-colapse: colapse
+			border-spacing: 0
+			margin-top: 0
+			margin-bottom: 0
+			tr
+				display: flex
+				align-items: center
+				justify-content: space-between
+				flex-wrap: wrap
+				border-radius: 10px
+				overflow: hidden
+				padding: 20px
+				background-color: rgba(#586F8E, .5)
+				& + tr
+					margin-top: 10px
+
+	.deposit
+		padding: 0
+		border-radius: 0px
+		background-color: transparent
+		&:nth-child(1)
+			border-radius: 0px
+			padding: 0
+		&:last-child
+			border-radius: 0px
+			padding: 0
+		&:nth-child(3),
+		&:nth-child(4)
+			width: 100%
+		&__balance
+			text-align: right
+		&__currency
+			margin-right: 30px
+		&__rate
+			margin-top: 7px
+		&__income
+			&-block
+				margin-top: 20px
+		&__staking
+			margin-top: 10px
+		&__id
+			margin-top: 20px
+			text-align: left
+
+	.open-deposit-staking
+		display: flex
+		input
+			& + span
+				font-size: 14px
+				white-space: normal
+				padding: 0 20px

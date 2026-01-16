@@ -1,0 +1,33 @@
+.column
+	width: 100%
+	height: 227px
+	border-radius: 8px
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	display: flex
+	align-items: flex-end
+	justify-content: center
+	position: relative
+	&:after
+		position: absolute
+		content: ''
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background: linear-gradient(90deg, rgba(#212C3D, 1) 0%, rgba(#212C3D, 0) 24%, rgba(#212C3D, 0) 68%, rgba(#212C3D, 1) 100%)
+		opacity: 0.7
+	&-section
+		padding: 60px 0
+
+@media only screen and (max-width : 1199px)
+
+	.column
+		height: 20vw
+		&:after
+			opacity: 1
+		&-image
+			height: 25vw
+		&-section
+			padding: 0

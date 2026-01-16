@@ -1,0 +1,43 @@
+.logos-slider
+	display: flex
+	justify-content: center
+	flex-shrink: 0
+	animation: scrollLogos 40s linear infinite
+	& + .logos-slider
+		margin-top: 60px
+	&:nth-child(2n)
+		animation: scrollLogosReverse 40s linear infinite
+	&__slide
+		flex-shrink: 0
+		margin: 0 45px
+		display: inline-flex
+		align-items: center
+		justify-content: center
+	&-section
+		display: flex
+		align-items: center
+		justify-content: flex-start
+	&__slide
+		flex-shrink: 0
+		margin: 0 45px
+		display: inline-flex
+		align-items: center
+		justify-content: center
+
+@keyframes scrollLogos
+	0%
+		transform: translateX(0)
+	100%
+		transform: translateX(-100%)
+
+@keyframes scrollLogosReverse
+	0%
+		transform: translateX(0)
+	100%
+		transform: translateX(100%)
+
+@media only screen and (max-width : 575px)
+
+	.logos-slider
+		&__slide
+			margin: 0 30px

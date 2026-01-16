@@ -1,0 +1,109 @@
+.form
+	&__btn
+		padding: 20px 40px
+
+.receive-form,
+.send-form,
+.open-deposit-form
+	margin-top: 30px
+	input[type=text],
+	input[type=password],
+	input[type=url],
+	input[type=email],
+	input[type=number]
+		margin-bottom: 0
+	.btn
+		margin-top: 30px
+	.form
+		&-inputs
+			display: flex
+			justify-content: space-between
+			width: 100%
+			max-width: 100%
+		&-group
+			margin-right: 27px
+			width: 100%
+			&:last-child
+				margin-right: 0
+		&-label
+			font-size: 13px
+			margin-bottom: 5px
+			white-space: nowrap
+			color: var(--user-text-color)
+		&__foot
+			display: flex
+			align-items: center
+			margin-top: 30px
+			.btn
+				margin-top: 0
+		&__send
+			margin-left: 30px
+			&-amount
+				font-weight: 600
+				font-size: 24px
+				color: var(--accent-color)
+				&-currency
+					font-size: 15px
+			&-text
+				font-size: 14px
+				color: var(--user-text-color)
+				margin-top: 5px
+
+@media only screen and (max-width : 1299px)
+
+	.open-deposit-form
+		.form-inputs
+			flex-direction: column
+		.form-group
+			margin-right: 0
+			& + .form-group
+				margin-top: 20px
+
+@media only screen and (max-width : 1199px)
+
+	.open-deposit-form
+		.form-inputs
+			flex-direction: row
+		.form-group
+			margin-right: 27px
+			& + .form-group
+				margin-top: 0px
+
+@media only screen and (max-width : 767px)
+
+	.open-deposit-form
+		.form
+			&-inputs
+				flex-direction: column
+			&-group
+				margin-right: 0
+				& + .form-group
+					margin-top: 20px
+
+@media only screen and (max-width : 575px)
+
+	.receive-form,
+	.send-form,
+	.open-deposit-form
+		.form
+			&__foot
+				flex-direction: column-reverse
+				align-items: flex-start
+				margin-top: 20px
+				.btn
+					margin-top: 20px
+			&__send
+				margin-left: 0px
+				margin-top: 10px
+				&-amount
+					font-size: 20px
+					&-currency
+						font-size: 13px
+				&-text
+					font-size: 12px
+			&-inputs
+				flex-direction: column
+			&-group
+				margin-right: 0
+				& + .form-group
+					margin-top: 20px

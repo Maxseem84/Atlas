@@ -1,0 +1,176 @@
+.countdown
+	&-inner
+		min-height: 47.28vw
+		position: relative
+		border-radius: 8px
+		overflow: hidden
+		padding: 130px 0
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+	&-bg,
+	&-mobile-bg
+		position: absolute
+		top: -1px
+		left: -1px
+		right: -1px
+		bottom: -1px
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		z-index: -1
+	&-mobile-bg
+		display: none
+	&-block
+		display: flex
+		flex-direction: column
+		align-items: center
+	&-info
+		text-align: center
+	&-title
+		font-size: 96px
+		line-height: 1.5
+		color: #fff
+		background: linear-gradient(90deg, #fff 0%, #fff 100%)
+		background-clip: text
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		white-space: nowrap
+	&-subtitle
+		font-weight: 400
+		font-size: 20px
+		letter-spacing: 0.2em
+		color: #fff
+	&__btn
+		margin-top: 40px
+
+.countdown
+	margin-top: 60px
+	display: flex
+	gap: 10px
+	text-align: center
+	justify-content: center
+	font-family: var(--second-family)
+	padding: 20px 20px
+	font-size: 36px
+	color: #fff
+	&:before
+		background: linear-gradient(90deg, rgba(#AEB4C4, .8) 0%, rgba(#AEB4C4, .16) 100%)
+
+.time-block
+	display: flex
+	align-items: center
+	position: relative
+	font-weight: 300
+	text-align: center
+	color: #fff
+
+.colon
+	font-weight: 500
+
+.flip-card
+	display: flex
+	&__digit
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 24px
+		span
+			position: absolute
+			width: 100%
+			text-align: center
+			left: 50%
+			transform: translateX(-50%)
+			opacity: 1
+		.old
+			animation: slideOut 0.4s ease forwards
+
+		.new
+			animation: slideIn 0.4s ease forwards
+	&__label
+		margin-left: 5px
+
+@keyframes slideOut
+	0%
+		transform: translate(-50%, 0%)
+		opacity: 1
+
+	100%
+		transform: translate(-50%, -100%)
+		opacity: 0
+
+@keyframes slideIn
+	0%
+		transform: translate(-50%, 100%)
+		opacity: 0
+
+	100%
+		transform: translate(-50%, 0%)
+		opacity: 1
+
+@media only screen and (min-width : 2000px)
+
+	.countdown
+		&-section
+			aspect-ratio: 1.75
+
+@media only screen and (max-width : 1599px)
+
+	.countdown
+		&-title
+			font-size: 84px
+		&-subtitle
+			font-size: 18px
+
+@media only screen and (max-width : 1199px)
+
+	.countdown
+		margin-top: 30px
+		&-inner
+			padding: 100px 0
+		&-title
+			font-size: 72px
+		&-subtitle
+			font-size: 16px
+		&__btn
+			margin-top: 20px
+
+@media only screen and (max-width : 991px)
+
+	.countdown
+		transform: scale(.8)
+		&-inner
+			min-height: auto
+
+@media only screen and (max-width : 767px)
+
+	.countdown
+		margin-top: auto
+		&-inner
+			min-height: auto
+			aspect-ratio: 0.56
+			justify-content: space-between
+			.container
+				min-height: 100%
+		&-title
+			font-size: 60px
+		&-block
+			justify-content: space-between
+			min-height: 100%
+		&-bg
+			display: none
+		&-mobile-bg
+			display: block
+
+@media only screen and (max-width : 575px)
+
+	.countdown
+		transform: scale(.65)
+		&-title
+			font-size: 36px
+		&-subtitle
+			margin-top: 8px
+		&-inner
+			padding: 70px 0

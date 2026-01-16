@@ -1,0 +1,54 @@
+.balance-cards
+	display: flex
+	margin: 0 -5px -10px
+	flex-wrap: wrap
+
+.balance-card
+	padding: 10px 20px
+	width: calc(33.33% - 10px)
+	margin: 0 5px 10px
+	background-color: rgba(#586F8E, .5)
+	border-radius: 8px
+	&__title
+		display: flex
+		align-items: center
+		img
+			width: 24px
+			height: 24px
+			flex-shrink: 0
+			margin-right: 10px
+		span
+			font-size: 13px
+			font-weight: 600
+	&__deposit
+		font-weight: 500
+		font-size: 14px
+		text-transform: uppercase
+		white-space: nowrap
+		margin-top: 15px
+		&-token
+			color: var(--accent-color)
+			font-size: 13px
+			text-transform: uppercase
+			white-space: nowrap
+			margin-top: 10px
+
+@media only screen and (max-width : 1599px)
+
+	.balance-card
+		width: calc(50% - 10px)
+
+@media only screen and (max-width : 1199px)
+
+	.balance-card
+		width: calc(33.33% - 10px)
+
+@media only screen and (max-width : 767px)
+
+	.balance-card
+		width: calc(50% - 10px)
+
+@media only screen and (max-width : 575px)
+
+	.balance-card
+		width: calc(100% - 10px)

@@ -1,0 +1,98 @@
+.verification
+	&__text
+		color: var(--user-text-color)
+		font-size: 13px
+		margin-top: 20px
+	.btn
+		margin-top: 20px
+
+.verification
+	&-form
+		margin-top: 20px
+		max-width: 770px
+		.form
+			&-inputs
+				display: flex
+				gap: 10px
+		.input-file
+			overflow: hidden
+			&__name
+				display: inline-flex
+				align-items: center
+				justify-content: center
+				cursor: pointer
+				width: 100%
+				font-size: 15px
+				font-weight: 500
+				height: 45px
+				padding: 0 20px
+				text-align: center
+				border: 1px solid #212C3D
+				border-radius: 4px
+				background-color: #212C3D
+				overflow: hidden
+				line-height: 1.2
+				transition: border-color .3s
+				&.selected
+					border-color: var(--accent-color)
+					color: #fff
+					word-break: break-all
+					border-color: var(--accent-color)
+			input
+				position: absolute
+				z-index: -1
+				opacity: 0
+				display: block
+
+.wallets
+	&__text
+		color: var(--user-text-color)
+		font-size: 13px
+		margin-top: 20px
+	&-form
+		margin-top: 20px
+		.btn
+			margin-top: 20px
+		.form
+			&-group
+				& + .form-group
+					margin-top: 20px
+			&-label
+				display: flex
+				align-items: center
+				justify-content: flex-start
+				margin-bottom: 5px
+				img
+					width: 24px
+					height: 24px
+					margin-right: 10px
+					flex-shrink: 0
+				span
+					font-size: 13px
+					font-weight: 600
+
+.user
+	&-form
+		margin-top: 20px
+		.btn
+			margin-top: 20px
+		.form
+			&-group
+				& + .form-group
+					margin-top: 20px
+			&-label
+				font-size: 13px
+				margin-bottom: 5px
+
+@media only screen and (max-width : 767px)
+
+	.verification
+		.form
+			&-inputs
+				flex-direction: column
+
+@media only screen and (max-width : 575px)
+
+	.verification
+		.btn
+			width: 100%

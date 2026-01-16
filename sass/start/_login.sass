@@ -1,0 +1,93 @@
+.login-form,
+.reg-form
+    text-align: center
+    display: flex
+    flex-direction: column
+    padding: 60px
+    border-radius: 10px
+    max-width: 490px
+    margin-left: auto
+    margin-right: auto
+    background: linear-gradient(135deg, rgba(#455976, .8) 0%, rgba(#33445B, .8) 100%)
+    input[type=text],
+    input[type=password],
+    input[type=url],
+    input[type=email],
+    input[type=number]
+        text-align: center
+        height: 58px
+
+.form-link
+    font-size: 15px
+    margin-top: 30px
+    color: #fff
+    & + .form-link
+        margin-top: 10px
+    a
+        font-weight: 500
+        color: var(--blue)
+        text-decoration: none
+        text-decoration-color: transparent
+        transition: text-decoration-color .3s
+        &:hover
+            text-decoration: underline
+            text-decoration-color: inherit
+
+.form-checkbox
+    margin-top: 10px
+    margin-bottom: 20px
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    text-align: left
+    font-size: 15px
+    color: #fff
+    &__input
+        display: none
+    &__label
+        display: flex
+        align-items: center
+        cursor: pointer
+        user-select: none
+        position: relative
+        a
+            font-weight: 500
+            color: #fff
+            text-decoration: underline
+            text-decoration-color: #fff
+            transition: text-decoration-color .3s
+            &:hover
+                text-decoration: none
+                text-decoration-color: transparent
+                transition: text-decoration-color .2s
+
+.custom-checkbox
+    width: 20px
+    height: 20px
+    border-radius: 4px
+    border: 1px solid #394960
+    background-color: #212C3D
+    position: relative
+    flex-shrink: 0
+    margin-right: 10px
+    &::after
+        content: ""
+        position: absolute
+        top: 3px
+        left: 7px
+        width: 4px
+        height: 11px
+        border: solid #fff
+        border-width: 0 2px 2px 0
+        opacity: 0
+        transform: rotate(45deg)
+        transition: opacity 0.2s
+    .form-checkbox__input:checked + .form-checkbox__label &
+        &::after
+            opacity: 1
+
+@media only screen and (max-width : 575px)
+
+    .login-form,
+    .reg-form
+        padding: 40px

@@ -1,0 +1,200 @@
+.docs-article
+	width: 100%
+
+.page-content
+	font-size: 16px
+	line-height: 1.5
+
+	p
+		margin: 25px 0
+
+	img
+		height: auto
+		width: 100%
+		border-radius: 10px
+		margin: 15px 0
+
+	b, strong
+		font-weight: 700
+
+	i
+		font-style: italic
+
+	h1
+		margin: 0
+		font-family: var(--second-family)
+		font-weight: 300
+		font-size: 48px
+		line-height: 150%
+		letter-spacing: 0.1em
+		text-transform: uppercase
+		color: #fff
+
+	h2
+		margin: 0
+		font-family: var(--second-family)
+		font-weight: 400
+		font-size: 32px
+		line-height: 150%
+		letter-spacing: 0.1em
+		text-transform: uppercase
+		color: #fff
+		margin-top: 50px
+
+	.alignleft
+		float: left
+		margin-right: 20px
+		width: auto
+
+	.alignright
+		float: right
+		margin-left: 20px
+		width: auto
+
+	.aligncenter,
+	div.aligncenter
+		display: block
+		margin: 10px auto
+		width: auto
+
+	a:not(.btn)
+		color: var(--accent-color)
+		font-weight: 500
+		text-decoration: underline
+		text-decoration-color: var(--accent-color)
+		transition: text-decoration-color 0.3s
+		&:hover
+			text-decoration: none
+			text-decoration-color: transparent
+
+	ul, ol
+		margin: 0
+		margin-top: 20px
+		padding: 0
+		li
+			position: relative
+			padding-left: 25px
+			& + li
+				margin-top: 20px
+
+	ul
+		li
+			&::before
+				position: absolute
+				left: 0
+				top: 4px
+				content: ''
+				width: 16px
+				height: 16px
+				border-radius: 50%
+				border: 1px solid var(--accent-color)
+			&::after
+				position: absolute
+				left: 5px
+				top: 9px
+				content: ''
+				width: 6px
+				height: 6px
+				border-radius: 50%
+				background-color: var(--accent-color)
+
+	ol
+		counter-reset: item
+		li
+			&:before
+				position: absolute
+				left: 0
+				top: 0
+				width: 16px
+				content: ''
+				content: counter(item) "."
+				counter-increment: item
+				font-weight: 700
+				color: var(--accent-color)
+
+.docs
+	&-tabs
+		margin: 80px 0
+	&-tab
+		cursor: pointer
+		user-select: none
+		& + .docs-tab
+			margin-top: 10px
+		&__title
+			font-weight: 700
+			font-size: 15px
+			color: #fff
+			border-radius: 10px
+			padding: 30px 20px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			min-height: 80px
+			position: relative
+		&__toggle
+			padding: 0
+			border: none
+			background-color: transparent
+			box-shadow: none
+			margin-left: 40px
+			width: 20px
+			height: 20px
+			display: inline-flex
+			align-items: center
+			justify-content: center
+			flex-shrink: 0
+			cursor: pointer
+		&__content
+			max-height: 0
+			transition: max-height .3s, opacity .3s
+			overflow: hidden
+			opacity: 0
+			p
+				margin: 0
+				padding: 0 20px 30px
+				line-height: 1.5
+		&.opened
+			.docs-tab
+				&__content
+					max-height: 100vh
+					opacity: 1
+				&__toggle
+					transform: rotate(180deg)
+
+@media only screen and (max-width : 1199px)
+
+	.page-content
+
+		h1
+			font-size: 40px
+		h2
+			font-size: 28px
+
+@media only screen and (max-width : 767px)
+
+	.page-content
+
+		.alignleft,
+		.alignright,
+		.aligncenter,
+		.alignnone
+			float: none
+			margin: 0
+
+@media only screen and (max-width : 575px)
+
+	.page-content
+
+		h1
+			font-size: 32px
+
+		h2
+			font-size: 24px
+
+		.alignleft,
+		.alignright,
+		.aligncenter,
+		.alignnone
+			width: 100%
+			img
+				width: 100%

@@ -1,0 +1,122 @@
+.docs-aside
+	width: 370px
+	padding-right: 5px
+	margin-right: 90px
+	flex-shrink: 0
+	position: sticky
+	top: 100px
+	height: calc(100vh - 120px)
+	overflow-y: auto
+	-webkit-overflow-scrolling: touch
+
+.docs
+	&-menu
+		&__block
+			& + .docs-menu__block
+				margin-top: 40px
+		&__title
+			font-weight: 600
+			font-size: 15px
+			text-transform: uppercase
+			margin-bottom: 10px
+			font-family: var(--second-family)
+			letter-spacing: 0.1em
+			color: #97a0aa
+		&__list
+			display: flex
+			flex-direction: column
+		&__item
+			width: 100%
+			& > a
+				backdrop-filter: blur(5px)
+				overflow: hidden
+				position: relative
+				&:before
+					position: absolute
+					content: ''
+					border-radius: inherit
+					inset: 0
+					padding: 1px
+					background: linear-gradient(90deg, rgba(#5D6A88, .8) 0%, rgba(#5D6A88, .16) 100%)
+					-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)
+					-webkit-mask-composite: xor
+					mask-composite: exclude
+					pointer-events: none
+					opacity: 0
+			&:has(.docs-menu__toggle.opened)
+				& > a
+					background: linear-gradient(135deg, rgba(#455976, .5) 0%, rgba(#1F2833, .5) 100%)
+					&:before
+						opacity: 1
+			&.active
+				& > a
+					color: var(--accent-color)
+			a
+				display: block
+				border-radius: 4px
+				padding: 12px 20px
+				width: 100%
+				background-color: transparent
+				font-weight: 500
+				font-size: 15px
+				color: #fff
+				transition: color .3s
+				&:active
+					color: var(--accent-color)
+			&.has-menu
+				& > a
+					padding-right: 60px
+					position: relative
+		&__toggle
+			box-shadow: none
+			padding: 0
+			background-color: transparent
+			position: absolute
+			border: none
+			cursor: pointer
+			width: 20px
+			height: 20px
+			right: 20px
+			border-radius: 3px
+			top: calc(50% - 10px)
+			transition: background-color .3s
+			&.opened
+				transform: rotate(90deg)
+				svg
+					path
+						stroke: #fff
+	&-submenu
+		height: 0
+		margin: 5px 0
+		overflow: hidden
+		transition: height .3s, opacity .3s
+		margin-left: 20px
+		border-left: 2px solid var(--blue)
+		opacity: 0
+
+@media (hover)
+
+	.docs-menu
+		&__item
+			a
+				&:hover
+					color: var(--accent-color)
+		&__toggle
+			&:hover
+				background-color: #DBDEEB
+			&.opened
+				&:hover
+					background-color: var(--blue)
+
+@media only screen and (max-width : 1199px)
+
+	.docs
+		&-aside
+			position: relative
+			width: 100%
+			top: auto
+			height: auto
+			display: none
+			margin-bottom: 60px
+			&.opened
+				display: block

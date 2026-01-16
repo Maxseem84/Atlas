@@ -1,0 +1,207 @@
+*::placeholder
+	opacity: 1
+	font-size: 15px
+	font-weight: 500
+	color: #fff
+	transition: opacity .3s
+
+.form
+	input[type=text],
+	input[type=password],
+	input[type=url],
+	input[type=email],
+	input[type=number]
+		width: 100%
+		font-size: 15px
+		font-weight: 500
+		height: 45px
+		padding: 0 20px
+		text-align: left
+		border: 1px solid #212C3D
+		border-radius: 4px
+		background-color: #212C3D
+		box-shadow: none
+		color: #fff
+		&:disabled
+			border-color: var(--accent-color)
+		&:focus
+			&::placeholder
+				opacity: 0
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	input:-webkit-autofill:active
+		transition: background-color 5000s ease-in-out 0s
+		-webkit-box-shadow: inset 0 0 0 60px #212C3D
+		-webkit-text-fill-color: #fff
+
+.input-group
+	display: flex
+	flex-direction: column
+	width: 100%
+	margin-bottom: 10px
+
+.select
+	background-color: #212C3D
+	border: none
+	border-radius: 4px
+	height: 45px
+
+.jq-selectbox
+	width: 100%
+	&.opened
+		.jq-selectbox
+			&__trigger
+				transform: rotate(180deg)
+	&__select
+		width: 100%
+		height: 45px
+		padding: 0 55px 0 20px
+		border-radius: 4px
+		background-image: none
+		background-color: #212C3D
+		border: none
+		box-shadow: none
+		text-shadow: none
+		line-height: 1.2
+		&-text
+			font-size: 15px
+			font-weight: 500
+			font-family: "Inter"
+			color: #fff
+			height: 100%
+			display: flex
+			align-items: center
+			justify-content: flex-start
+			white-space: normal
+		&:hover
+			background-image: none
+			background-color: #212C3D
+		&:active
+			background-color: #212C3D
+			box-shadow: none
+	&.focused
+		.jq-selectbox__select
+			background-color: #212C3D
+			border: none
+	&__trigger
+		border: none
+		position: absolute
+		right: 20px
+		width: 14px
+		background-image: url('./images/caret.svg')
+		background-repeat: no-repeat
+		background-position: center
+		background-size: contain
+		&-arrow
+			display: none
+	&__dropdown
+		background-color: #212C3D
+		box-shadow: none
+		border-radius: 4px
+		padding: 0px
+		overflow: hidden
+		border: none
+		li
+			padding: 10px 20px
+			font-size: 15px
+			font-weight: 500
+			font-family: "Inter"
+			transition: color .3s
+			white-space: normal
+			color: #fff
+			line-height: 1.2
+			&.disabled
+				pointer-events: none
+			&.selected
+				background-color: #212C3D
+				color: var(--accent-color)
+			&:hover
+				background-color: #212C3D
+				color: var(--accent-color)
+
+.fancybox-bg
+	background-color: var(--black)
+
+.fancybox-is-open .fancybox-bg
+	background-color: var(--black)
+	opacity: 0.75
+
+/* Custom animation */
+.fancybox-fx-slide-in-down.fancybox-slide--previous
+	transform: translateY(100%)
+
+.fancybox-fx-slide-in-down.fancybox-slide--next
+	transform: translateY(-100%)
+
+.fancybox-fx-slide-in-down.fancybox-slide--current
+	transform: translateY(0)
+
+.fancybox-fx-slide-in-up.fancybox-slide--previous
+	transform: translateY(-100%)
+
+.fancybox-fx-slide-in-up.fancybox-slide--next
+	transform: translateY(100%)
+
+.fancybox-fx-slide-in-up.fancybox-slide--current
+	transform: translateY(0)
+
+.fancybox-fx-slide-in-right.fancybox-slide--previous
+	transform: translateX(100%)
+
+.fancybox-fx-slide-in-right.fancybox-slide--next
+	transform: translateX(-100%)
+
+.fancybox-fx-slide-in-right.fancybox-slide--current
+	transform: translateX(0)
+
+.popup
+	border-radius: var(--brs)
+	background-color: #080F15
+	padding: 220px 30px 40px
+	overflow: visible
+	width: 450px
+	box-shadow: none
+	display: none
+	margin: 20px auto
+	text-align: center
+	&-image
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		width: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+		pointer-events: none
+	&-title
+		margin: 0
+		font-size: 20px
+		text-transform: uppercase
+		font-weight: 500
+		background: var(--gradient)
+		background-clip: text
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		display: inline-block
+		letter-spacing: 0.4em
+		position: relative
+		z-index: 2
+	&-subtitle
+		margin: 0
+		margin-top: 20px
+		font-weight: 400
+		font-size: 16px
+		position: relative
+		z-index: 2
+	.fancybox-close-small
+		display: none
+
+@media only screen and (max-width : 575px)
+
+	.popup
+		width: calc(100% - 40px)
+		padding-top: 45vw
+		&-title
+			font-size: 18px

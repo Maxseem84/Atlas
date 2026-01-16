@@ -1,0 +1,125 @@
+.hero
+	&-inner
+		width: 100%
+		border-radius: 8px
+		overflow: hidden
+		display: flex
+		align-items: flex-end
+		min-height: 47.28vw
+		padding: 130px 0
+		position: relative
+	&-bg,
+	&-mobile-bg
+		position: absolute
+		inset: 0
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: top center
+		z-index: -1
+	&-mobile-bg
+		display: none
+	&-block
+		color: #fff
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+	&__title
+		margin: 0
+		font-family: var(--second-family)
+		font-weight: 300
+		font-size: 60px
+		letter-spacing: 0.05em
+		text-transform: uppercase
+	&__subtitle
+		font-family: var(--second-family)
+		font-size: 24px
+		letter-spacing: 0.05em
+		text-transform: uppercase
+		margin-top: 44px
+		a
+			margin: 0 30px
+			color: var(--accent-color)
+			padding-right: 23px
+			position: relative
+			white-space: nowrap
+			&:before
+				position: absolute
+				content: ''
+				top: 50%
+				transform: translateY(-50%)
+				right: 0
+				width: 17px
+				height: 17px
+				background-image: url('./images/arrow.svg')
+				background-repeat: no-repeat
+				background-size: contain
+				background-position: center right
+	&-countdown
+		display: flex
+		font-family: var(--second-family)
+		font-weight: 300
+		font-size: 36px
+		letter-spacing: 0.05em
+		padding: 20px 25px
+		&__currency
+			margin-right: 10px
+		&__title
+			font-family: var(--third-family)
+			font-size: 15px
+			margin-bottom: 10px
+
+@media only screen and (max-width : 1599px)
+
+	.hero
+		&-inner
+			padding: 6vw 3vw
+
+@media only screen and (max-width : 1199px)
+
+	.hero
+		&__title
+			font-size: 50px
+		&__subtitle
+			margin-top: 30px
+			font-size: 20px
+			a
+				margin: 0 15px
+		&-countdown
+			font-size: 32px
+
+@media only screen and (max-width : 991px)
+
+	.hero
+		&-inner
+			min-height: auto
+			aspect-ratio: 0.56
+			padding: 100px 0
+		&-block
+			flex-direction: column
+			text-align: center
+			align-items: center
+		&-bg
+			display: none
+		&-mobile-bg
+			display: block
+		&-countdown
+			&-block
+				margin-top: 50px
+
+@media only screen and (max-width : 575px)
+
+	.hero
+		&-inner
+			padding: 50px 0
+		&__title
+			font-size: 36px
+		&__subtitle
+			font-size: 16px
+			margin-top: 15px
+		&-countdown
+			font-size: 24px
+			padding: 10px 15px
+			&-block
+				margin-top: 40px
+			&__title
+				font-size: 13px
