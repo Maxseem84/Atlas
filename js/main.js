@@ -302,7 +302,7 @@ $(function () {
         url: 'mail.php',
         data: form.serialize(),
       }).done(function () {
-        window.location.href = '/user.html';
+        window.location.href = '/Atlas/user.html';
       });
       return false;
     }
