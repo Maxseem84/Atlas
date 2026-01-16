@@ -792,7 +792,7 @@ $(function () {
         const id = column.getAttribute('data-roadmap-id');
         if (id && wayContainer) {
           const img = document.createElement('img');
-          img.src = `/images/road-ways/${id}.svg`;
+          img.src = `images/road-ways/${id}.svg`;
           img.alt = `Road map ${id}`;
           wayContainer.innerHTML = '';
           wayContainer.appendChild(img);
